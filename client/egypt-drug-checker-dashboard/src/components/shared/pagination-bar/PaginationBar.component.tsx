@@ -1,7 +1,7 @@
 "use client";
 import MUpagination from "@mui/material/Pagination";
 import { IpaginationBar } from "./PaginationBar.model";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 export default function PaginationBar({
 	pageNumber,
@@ -9,7 +9,9 @@ export default function PaginationBar({
 }: IpaginationBar) {
 	const router = useRouter();
 	const path = usePathname().split("/").slice(0, -1).join("/");
-
+	const searchParams = useSearchParams();
+	const paramsObject = Object.fromEntries(searchParams.entries());
+	console.log("searchParams", Object.fromEntries(searchParams.entries()));
 	return (
 		<div className="flex justify-center">
 			<MUpagination
@@ -19,7 +21,10 @@ export default function PaginationBar({
 				color="primary"
 				size="large"
 				onChange={(event, value) => {
-					router.push(`${path}/${value}`);
+					const searchParamsString = new URLSearchParams(
+						paramsObject
+					).toString();
+					router.push(`${path}/${value}?${searchParamsString}`);
 				}}
 			/>
 		</div>

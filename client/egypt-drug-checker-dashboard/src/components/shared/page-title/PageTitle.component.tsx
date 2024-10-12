@@ -10,6 +10,7 @@ const PathToTitle: { [key: string]: string } = {
 	reviews: "Drugs reviews",
 	store: "Store",
 	users: "Users",
+	profile: "Profile",
 };
 export default function PageTitle() {
 	const pathname = usePathname().split("/")[1];

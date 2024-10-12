@@ -12,4 +12,5 @@ export interface IprofileCard {
 	phone?: string;
 	editable?: boolean;
 	hideHoveringBorder?: boolean;
+	buttonLink?: string;
 }

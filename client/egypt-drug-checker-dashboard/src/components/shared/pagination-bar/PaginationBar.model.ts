@@ -1,4 +1,4 @@
 export interface IpaginationBar {
-	pageNumber: string;
-	totalPages: string;
+	pageNumber: number;
+	totalPages: number;
 }

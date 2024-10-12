@@ -21,6 +21,7 @@ export default function ProfileCard({
 	phone,
 	editable,
 	hideHoveringBorder,
+	buttonLink
 }: IprofileCard) {
 	const contactElements = (
 		<>
@@ -39,11 +40,12 @@ export default function ProfileCard({
 
 			{editable && (
 				<div className="hidden lg:block ">
-					<TextButton buttonType="outlined">Edit profile</TextButton>
+					<TextButton buttonType="outlined" to={buttonLink}>Edit profile</TextButton>
 				</div>
 			)}
 		</>
 	);
+	console.log("userImageSrc", userImageSrc);
 	return (
 		<CardContainer hideHoveringBorder={hideHoveringBorder ? true : undefined}>
 			<div className="flex flex-col gap-6 lg:flex-row justify-between  p-4 bg-white shadow-lg rounded-lg">
@@ -52,7 +54,7 @@ export default function ProfileCard({
 						<div>
 							<UserAvatar
 								src={userImageSrc}
-								frameSrc={userFrameSrc}
+								frameName={userFrameSrc}
 								alt={userName}
 								size={85}
 							/>
@@ -99,7 +101,7 @@ export default function ProfileCard({
 					</div>
 					{editable && (
 						<div className="lg:hidden flex justify-center">
-							<TextButton className="lg:hidden" buttonType="outlined">
+							<TextButton className="lg:hidden" buttonType="outlined" to={buttonLink}>
 								Edit profile
 							</TextButton>
 						</div>

@@ -29,7 +29,8 @@ export default function TextButton({
 		<MUbutton
 			sx={TextButtonType[buttonType]}
 			variant={variant}
-			href={to}
+			//chore: to remove as To BE Done
+			href={to as string}
 			component={to ? Link : "button"}
 			{...props}
 		>

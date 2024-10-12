@@ -2,7 +2,6 @@ import { type IreviewCard } from "./ReviewCard.model";
 import CardContainer from "../card-container/CardContainer.component";
 import TextButton from "../text-button/TextButton.component";
 import LabelField from "./label-field/LabelField.component";
-import { headers } from "next/headers";
 
 export default function ReviewCard({
 	buttonType,
@@ -13,14 +12,12 @@ export default function ReviewCard({
 	buttonTitle,
 	hideButton = false,
 	hideHoveringBorder,
-	to
+	to,
 }: IreviewCard) {
-	const headerList = headers();
-	const pathname = headerList.get("x-current-path");
 
 	return (
 		<CardContainer hideHoveringBorder={hideHoveringBorder ? true : undefined}>
-			<div className="flex flex-col gap-2 p-2">
+			<div className="flex flex-col gap-2 p-2 justify-between h-full">
 				<div className="flex flex-col gap-2">
 					{reviewerName && (
 						<LabelField title="Reviewer-Name" value={reviewerName} />
@@ -31,11 +28,11 @@ export default function ReviewCard({
 				</div>
 
 				<div className="flex justify-center">
-					{!hideButton &&
+					{!hideButton && (
 						<TextButton to={to} buttonType={buttonType ? buttonType : "full"}>
-							{buttonTitle}
+							{buttonTitle ?? ""}
 						</TextButton>
-					}
+					)}
 				</div>
 			</div>
 		</CardContainer>
