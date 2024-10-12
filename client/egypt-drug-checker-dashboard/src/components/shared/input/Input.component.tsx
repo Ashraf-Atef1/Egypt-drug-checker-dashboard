@@ -43,10 +43,11 @@ export default function Input({
 				onChange={onChange}
 				placeholder={placeholder}
 				required
+
 				style={{
 					fieldSizing: inputType === "contained" ? "content" : "initial",
-				}}
-				maxlength={maxLength}
+				} as React.CSSProperties}
+				maxLength={Number(maxLength) ?? 100}
 				disabled={readonly}
 			/>
 
