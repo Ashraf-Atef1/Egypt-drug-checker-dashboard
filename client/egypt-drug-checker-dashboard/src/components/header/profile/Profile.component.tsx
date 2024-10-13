@@ -1,7 +1,7 @@
 "use client";
 import UserAvatar from "@/components/shared/user-avatar/UserAvatar.component";
 import { fonts } from "@/utils/theme/fonts";
-import { Typography } from "@mui/material";
+import MUtypography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useAppDispatch, useAppSelector } from "@/lib/store/hooks";
 import { toggleMenu } from "@/lib/store/drop-menu/DropMenu.slice";
@@ -31,9 +31,9 @@ export default function Profile() {
 				alt={String(user.firstName)}
 				size={50}
 			/>
-			<Typography variant="h6" fontWeight={fonts.weight.bold}>
+			<MUtypography variant="h6" fontWeight={fonts.weight.bold}>
 				{user.firstName}
-			</Typography>
+			</MUtypography>
 			<ExpandMoreIcon color="primary" fontSize="large" />
 		</div>
 	);

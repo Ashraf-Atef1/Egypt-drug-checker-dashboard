@@ -1,6 +1,6 @@
 import CardContainer from "@/components/shared/card-container/CardContainer.component";
 import { IuserCard } from "./UserCard.model";
-import { Typography } from "@mui/material";
+import MUtypography from "@mui/material/Typography";
 import UserAvatar from "@/components/shared/user-avatar/UserAvatar.component";
 import { fonts } from "@/utils/theme/fonts";
 import Count from "../../shared/count/count.component";
@@ -27,14 +27,14 @@ export default function UserCard({
 		rankComponent = <Image src={ranks[rank - 1]} alt={`rank-${rank}`} />;
 	} else {
 		rankComponent = (
-			<Typography
+			<MUtypography
 				variant="inherit"
 				component="span"
 				fontWeight={fonts.weight.bold}
 				color="primary"
 			>
 				{rank}
-			</Typography>
+			</MUtypography>
 		);
 	}
 	return (
@@ -50,20 +50,20 @@ export default function UserCard({
 							size={85}
 						/>
 						<div className="text-sm sm:text-xl">
-							<Typography
+							<MUtypography
 								variant="inherit"
 								component="h3"
 								fontWeight={fonts.weight.bold}
 							>
 								{name}
-							</Typography>
-							<Typography
+							</MUtypography>
+							<MUtypography
 								variant="subtitle1"
 								component="p"
 								className="text-disable"
 							>
 								{userType}
-							</Typography>
+							</MUtypography>
 						</div>
 					</div>
 				</div>

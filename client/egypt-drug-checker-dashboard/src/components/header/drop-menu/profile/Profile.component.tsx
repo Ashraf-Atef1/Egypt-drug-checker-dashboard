@@ -1,7 +1,10 @@
 import TextButton from "@/components/shared/text-button/TextButton.component";
 import MUateReviewIcon from "@mui/icons-material/RateReview";
 import MUmanageAccountsIcon from "@mui/icons-material/ManageAccounts";
-import { IconButton, Typography } from "@mui/material";
+import {
+	IconButton as MUiconButton,
+	Typography as MUtypography,
+} from "@mui/material";
 import { useAppSelector } from "@/lib/store/hooks";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -25,22 +28,22 @@ export default function Profile() {
 			<div className="flex justify-between w-full">
 				{["admin", "doctor"].includes(String(user.userType)) && (
 					<Link href="/reviews">
-						<IconButton>
+						<MUiconButton>
 							<MUateReviewIcon fontSize="large" color="primary" />
-						</IconButton>
+						</MUiconButton>
 					</Link>
 				)}
 				{user.userType === "admin" && (
 					<Link href="/users">
-						<IconButton>
+						<MUiconButton>
 							<MUmanageAccountsIcon fontSize="large" color="primary" />
-						</IconButton>
+						</MUiconButton>
 					</Link>
 				)}
 			</div>
-			<Typography variant="subtitle1" component="p">
+			<MUtypography variant="subtitle1" component="p">
 				Hello, {user.firstName}
-			</Typography>
+			</MUtypography>
 			<TextButton buttonType="full" to="/profile">
 				My profile
 			</TextButton>

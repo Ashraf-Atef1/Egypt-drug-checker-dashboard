@@ -1,6 +1,6 @@
 import { type IstatisticsCard } from "./StatisticsCard.model";
 import CardContainer from "@/components/shared/card-container/CardContainer.component";
-import { Typography } from "@mui/material";
+import MUtypography from "@mui/material/Typography";
 import { fonts } from "@/utils/theme/fonts";
 import colors from "@/utils/theme/colors";
 
@@ -20,20 +20,20 @@ export default function StatisticsCard({
 		<CardContainer>
 			<div className="flex items-center px-4 py-8 gap-10">
 				<div className="flex-1 flex flex-col gap-4">
-					<Typography
+					<MUtypography
 						variant="h6"
 						component="h4"
 						fontWeight={fonts.weight.bold}
 					>
 						{title}
-					</Typography>
-					<Typography
+					</MUtypography>
+					<MUtypography
 						variant="h5"
 						component="p"
 						fontWeight={fonts.weight.extraBold}
 					>
 						{value}/{total}
-					</Typography>
+					</MUtypography>
 					{/* <div className="flex gap-3 items-center">
 						<span className="font-extrabold text-xl">{percent}%</span>
 						<SwitchAccessShortcutAddIcon

@@ -1,7 +1,7 @@
 import CardContainer from "@/components/shared/card-container/CardContainer.component";
 import { type IstoreItem } from "./StoreItem.model";
 import TextButton from "@/components/shared/text-button/TextButton.component";
-import { Typography } from "@mui/material";
+import MUtypography from "@mui/material/Typography";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import { fonts } from "@/utils/theme/fonts";
 
@@ -17,22 +17,22 @@ export default function StoreItem({
 			<div className="flex flex-col gap-2 p-3">
 				<div className="flex flex-col justify-center items-center gap-4 pt-8">
 					{children}
-					<Typography
+					<MUtypography
 						variant="h5"
 						color="primary"
 						fontWeight={fonts.weight.bold}
 					>
 						{title}
-					</Typography>
+					</MUtypography>
 				</div>
 				<div className="flex justify-between">
-					<Typography variant="h6" fontWeight={fonts.weight.bold}>
+					<MUtypography variant="h6" fontWeight={fonts.weight.bold}>
 						Cost:
-					</Typography>
+					</MUtypography>
 					<div className="flex items-center gap-1">
-						<Typography variant="h6" fontWeight={fonts.weight.extraBold}>
+						<MUtypography variant="h6" fontWeight={fonts.weight.extraBold}>
 							{coins}
-						</Typography>
+						</MUtypography>
 						<MonetizationOnIcon
 							color="primary"
 							sx={{
