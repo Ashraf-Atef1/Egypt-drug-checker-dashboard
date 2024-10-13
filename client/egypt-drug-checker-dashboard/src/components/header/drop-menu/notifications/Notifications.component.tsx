@@ -1,6 +1,9 @@
 import Link from "next/link";
 import MUarrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { Divider as MUdivider, Typography } from "@mui/material";
+import {
+	Divider as MUdivider,
+	Typography as MUtypography,
+} from "@mui/material";
 import { fonts } from "@/utils/theme/fonts";
 
 export default function Notifications() {
@@ -11,46 +14,46 @@ export default function Notifications() {
 				maxHeight: "40vh",
 			}}
 		>
-			<Typography
+			<MUtypography
 				variant="h6"
 				component="h5"
 				fontWeight={fonts.weight.bold}
 				color="primary"
 			>
 				Notifications
-			</Typography>
+			</MUtypography>
 			<div className="w-full flex flex-col gap-2">
-				<Typography noWrap>
+				<MUtypography noWrap>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
 					perspiciatis dolorem. Nostrum quasi unde nemo perspiciatis voluptatem
 					officia aperiam veniam praesentium, laborum atque temporibus vero
 					fuga, dolorem quae fugit illo.
-				</Typography>
+				</MUtypography>
 				<MUdivider />
-				<Typography noWrap>
+				<MUtypography noWrap>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
 					perspiciatis dolorem. Nostrum quasi unde nemo perspiciatis voluptatem
 					officia aperiam veniam praesentium, laborum atque temporibus vero
 					fuga, dolorem quae fugit illo.
-				</Typography>
+				</MUtypography>
 				<MUdivider />
-				<Typography noWrap>
+				<MUtypography noWrap>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
 					perspiciatis dolorem. Nostrum quasi unde nemo perspiciatis voluptatem
 					officia aperiam veniam praesentium, laborum atque temporibus vero
 					fuga, dolorem quae fugit illo.
-				</Typography>
+				</MUtypography>
 				<MUdivider />
-				<Typography noWrap>
+				<MUtypography noWrap>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
 					perspiciatis dolorem. Nostrum quasi unde nemo perspiciatis voluptatem
 					officia aperiam veniam praesentium, laborum atque temporibus vero
 					fuga, dolorem quae fugit illo.
-				</Typography>
+				</MUtypography>
 				<MUdivider />
 			</div>
 			<Link href="/notifications">
-				<Typography
+				<MUtypography
 					variant="subtitle1"
 					component="span"
 					fontWeight={fonts.weight.bold}
@@ -58,7 +61,7 @@ export default function Notifications() {
 				>
 					Show more
 					<MUarrowForwardIosIcon color="primary" />
-				</Typography>
+				</MUtypography>
 			</Link>
 		</div>
 	);
