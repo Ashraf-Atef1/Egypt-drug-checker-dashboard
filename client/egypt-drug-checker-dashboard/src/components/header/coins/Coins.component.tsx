@@ -1,5 +1,5 @@
 "use client";
-import { Typography } from "@mui/material";
+import MUtypography from "@mui/material/Typography";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import { fonts } from "@/utils/theme/fonts";
 import { useAppSelector } from "@/lib/store/hooks";
@@ -8,9 +8,9 @@ export default function Coins() {
 	const user = useAppSelector((state) => state.user);
 	return (
 		<div className="flex items-center gap-1">
-			<Typography variant="h5" fontWeight={fonts.weight.extraBold}>
+			<MUtypography variant="h5" fontWeight={fonts.weight.extraBold}>
 				{user?.coins}
-			</Typography>
+			</MUtypography>
 			<MonetizationOnIcon
 				color="primary"
 				sx={{
