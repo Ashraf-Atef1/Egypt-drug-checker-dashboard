@@ -1,16 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const interactionNameSchema = new mongoose.Schema({
   drugName: {
     type: String,
-    required: true
+    required: true,
   },
-  interactionName: String
+  interactionName: String,
 });
 interactionNameSchema.pre(/^find/, function (next) {
-  this.select('-__v -_id');
+  this.select("-__v -_id");
   next();
 });
-const InteractionDrugNamesCollection = mongoose.model('Interaction_drug_name', interactionNameSchema);
+const InteractionDrugNamesCollection = mongoose.model(
+  "Interaction_drug_name",
+  interactionNameSchema
+);
 
 module.exports = InteractionDrugNamesCollection;
